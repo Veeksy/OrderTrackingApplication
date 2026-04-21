@@ -1,0 +1,10 @@
+using Microsoft.AspNetCore.Mvc;
+
+namespace OrderTrackingApplication.Notification.Controllers;
+
+[ApiController]
+[Route("[controller]")]
+public class WeatherForecastController : ControllerBase
+{
+    
+}

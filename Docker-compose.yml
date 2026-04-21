@@ -1,0 +1,79 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: order-postgres
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: OrderTrackingDb
+    ports:
+      - "5433:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - order-network
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: order-rabbitmq
+    environment:
+      RABBITMQ_DEFAULT_USER: root
+      RABBITMQ_DEFAULT_PASS: 1111
+    ports:
+      - "5672:5672"      # AMQP
+      - "15672:15672"    # Management UI
+    healthcheck:
+      test: ["CMD", "rabbitmq-diagnostics", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    networks:
+      - order-network
+
+  web:
+    build:
+      context: .
+      dockerfile: OrderTrackingApplication.Web/Dockerfile
+    container_name: order-web
+    ports:
+      - "5000:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      postgres:
+        condition: service_healthy
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - order-network
+
+  notifications:
+    build:
+      context: .
+      dockerfile: OrderTrackingApplication.Notification/Dockerfile
+    container_name: order-notifications
+    ports:
+      - "5001:8080"
+    environment:
+      - DOTNET_ENVIRONMENT=Development
+    depends_on:
+      rabbitmq:
+        condition: service_healthy
+    networks:
+      - order-network
+
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  order-network:
+    driver: bridge

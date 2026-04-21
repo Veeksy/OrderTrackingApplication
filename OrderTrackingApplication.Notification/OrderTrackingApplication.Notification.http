@@ -1,0 +1,6 @@
+@OrderTrackingApplication.Notificationn_HostAddress = http://localhost:5045
+
+GET {{OrderTrackingApplication.Notificationn_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

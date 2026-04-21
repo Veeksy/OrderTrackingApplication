@@ -1,0 +1,61 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackingApplication.Domain", "OrderTrackingApplication.Domain\OrderTrackingApplication.Domain.csproj", "{AB8AD716-32F0-4A64-8291-F79B9724A65B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackingApplication.Infrastructure", "OrderTrackingApplication.Infrastructure\OrderTrackingApplication.Infrastructure.csproj", "{BAFFD09A-F803-48A6-8429-91ED11272396}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackingApplication.Application", "OrderTrackingApplication.Application\OrderTrackingApplication.Application.csproj", "{3A647796-1257-42AF-BF33-65A9A0627468}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackingApplication.Web", "OrderTrackingApplication.Web\OrderTrackingApplication.Web.csproj", "{F525338A-ABD3-D740-2061-90A78893A953}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackingApplication.Contracts", "OrderTrackingApplication.Contracts\OrderTrackingApplication.Contracts.csproj", "{A177F0F4-683A-4635-AA8B-7677238B1C5B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OrderTrackingApplication.Notification", "OrderTrackingApplication.Notification\OrderTrackingApplication.Notification.csproj", "{D81668AA-FEB6-B5C0-E612-5AED87649769}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker-compose", "Docker-compose", "{36D591C7-65C7-A0D1-1CBC-10CDE441BDC8}"
+	ProjectSection(SolutionItems) = preProject
+		.dockerignore = .dockerignore
+		Docker-compose.yml = Docker-compose.yml
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AB8AD716-32F0-4A64-8291-F79B9724A65B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AB8AD716-32F0-4A64-8291-F79B9724A65B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AB8AD716-32F0-4A64-8291-F79B9724A65B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AB8AD716-32F0-4A64-8291-F79B9724A65B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BAFFD09A-F803-48A6-8429-91ED11272396}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BAFFD09A-F803-48A6-8429-91ED11272396}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BAFFD09A-F803-48A6-8429-91ED11272396}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BAFFD09A-F803-48A6-8429-91ED11272396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A647796-1257-42AF-BF33-65A9A0627468}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A647796-1257-42AF-BF33-65A9A0627468}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A647796-1257-42AF-BF33-65A9A0627468}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A647796-1257-42AF-BF33-65A9A0627468}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F525338A-ABD3-D740-2061-90A78893A953}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F525338A-ABD3-D740-2061-90A78893A953}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F525338A-ABD3-D740-2061-90A78893A953}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F525338A-ABD3-D740-2061-90A78893A953}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A177F0F4-683A-4635-AA8B-7677238B1C5B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A177F0F4-683A-4635-AA8B-7677238B1C5B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A177F0F4-683A-4635-AA8B-7677238B1C5B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A177F0F4-683A-4635-AA8B-7677238B1C5B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D81668AA-FEB6-B5C0-E612-5AED87649769}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D81668AA-FEB6-B5C0-E612-5AED87649769}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D81668AA-FEB6-B5C0-E612-5AED87649769}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D81668AA-FEB6-B5C0-E612-5AED87649769}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8D08A642-D743-448D-AEBA-A66671C1A9DF}
+	EndGlobalSection
+EndGlobal
