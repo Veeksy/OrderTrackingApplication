@@ -35,22 +35,6 @@ public class OrderController(ISender sender) : ControllerBase
     }
 
     /// <summary>
-    /// Добавить заказ
-    /// </summary>
-    /// <param name="command"></param>
-    /// <param name="token"></param>
-    /// <returns></returns>
-    [HttpPost]
-    [ProducesResponseType(typeof(Order), StatusCodes.Status201Created)]
-    [ProducesResponseType(StatusCodes.Status400BadRequest)]
-    public async Task<Created<Order>> Create([FromBody] AddOrderCommand command, CancellationToken token)
-    {
-        var order = await sender.Send(command, token);
-
-        return TypedResults.Created($"/{nameof(Order)}/{order.OrderNumber}", order);
-    }
-
-    /// <summary>
     /// Получить список заказов
     /// </summary>
     /// <param name="command"></param>
@@ -64,6 +48,22 @@ public class OrderController(ISender sender) : ControllerBase
         var clientList = await sender.Send(command, token);
 
         return TypedResults.Ok(clientList);
+    }
+
+    /// <summary>
+    /// Добавить заказ
+    /// </summary>
+    /// <param name="command"></param>
+    /// <param name="token"></param>
+    /// <returns></returns>
+    [HttpPost]
+    [ProducesResponseType(typeof(Order), StatusCodes.Status201Created)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    public async Task<Created<Order>> Create([FromBody] AddOrderCommand command, CancellationToken token)
+    {
+        var order = await sender.Send(command, token);
+
+        return TypedResults.Created($"/{nameof(Order)}/{order.OrderNumber}", order);
     }
 
     /// <summary>
